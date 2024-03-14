@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Details</title>
+  <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+  <!-- navigation bar start -->
+  <nav>
+    <div>
+      <a href="/">Home</a>
+      <a href="/cart">Cart</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a> 
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="Search...">
+        <button class="search-button">Search</button>
+    </div>
+  </nav>
+  <!-- navigation bar end -->
+
+  <div class="container">
+    <% books.forEach(book => { %>
+      <div class="bookmain" data-title="<%= book.title %>" data-author="<%= book.author %>" data-price="<%= book.price %>">
+        <img src="data:image/jpeg;base64,<%= book.image.toString('base64') %>" alt="<%= book.title %> Image">
+        <h3 class="book-title"><%= book.title %></h3>
+        <form action="/addToCart/<%= book.id %>" method="post">
+          <button type="submit">Add to Cart</button>
+        </form>
+      </div>
+    <% }); %>
+  </div>
+  <!-- Popup code start-->
+  <div class="popup" id="bookPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">×</span>
+      <h3 id="popupTitle" class="popupContent"></h3>
+      <p id="popupAuthor"></p>
+      <p id="popupPrice"></p>
+    </div>
+  </div>
+  <!-- Popup code stop -->
+  <script>
+    // Function to open the popup and display book details
+    function openPopup(title, author, price) {
+      document.getElementById('popupTitle').textContent = 'Title: ' + title;
+      document.getElementById('popupAuthor').textContent = 'Author: ' + author;
+      document.getElementById('popupPrice').textContent = 'Price: $' + price;
+      document.getElementById('bookPopup').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('bookPopup').style.display = 'none';
+    }
+
+    // Add event listeners to book titles for hover effect
+    const bookContainers = document.querySelectorAll('.bookmain');
+    bookContainers.forEach(container => {
+      container.addEventListener('mouseover', () => {
+        const title = container.getAttribute('data-title');
+        const author = container.getAttribute('data-author');
+        const price = container.getAttribute('data-price');
+        openPopup(title, author, price);
+      });
+
+      container.addEventListener('mouseout', closePopup);
+    });
+  </script>
+
+  <!-- footer start -->
+  <div id="footer">
+    <p>&copy; 2024 Book Store</p>
+  </div>
+  <!-- footer end -->
+</body>
+</html>

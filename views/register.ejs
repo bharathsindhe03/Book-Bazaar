@@ -1,0 +1,41 @@
+<!-- register.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="/register.css">
+</head>
+<body>
+  <!-- if error displayed -->
+  <center><h2>User Registration</h2></center>
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+  <!-- error -->
+  <!-- register form start -->
+  <form action="/register" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address">
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password">
+
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number">
+
+    <button type="submit">Register</button>
+  </form>
+  <!-- register from end -->
+</body>
+</html>
