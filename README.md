@@ -18,14 +18,40 @@
 	<img src="https://img.shields.io/badge/CSS-1572B6.svg?style=flat&logo=CSS3&logoColor=white" alt="CSS">
 	<img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black" alt="JavaScript">
 	<img src="https://img.shields.io/badge/MySQL-4479A1.svg?style=flat&logo=MySQL&logoColor=white" alt="MySQL">
+    <img src="https://img.shields.io/badge/Node.js-339933.svg?style=flat&logo=Node.js&logoColor=white" alt="Node.js">
 	<img src="https://img.shields.io/badge/Express-000000.svg?style=flat&logo=Express&logoColor=white" alt="Express">
 </p>
 <hr>
 
+# Online Bookstore - Node.js Express MySQL Project
+
+This project is an implementation of an online bookstore using Node.js, Express, EJS templates, and MySQL database. It allows users to browse a collection of books, add them to their cart, register as a new user, log in, and make purchases. Users can also view their cart and remove items from it.
+
+## Features
+
+- Display a list of available books from the database.
+- Add books to the shopping cart and remove them.
+- User registration and authentication for personalized shopping experiences.
+- Secure handling of user passwords and sensitive information.
+- Logging user activity and purchases.
+
+## Technologies Used
+
+- **Node.js**: Runtime environment for server-side JavaScript.
+- **Express.js**: Web application framework for handling HTTP requests and routes.
+- **EJS (Embedded JavaScript)**: Templating engine for generating dynamic HTML content.
+- **MySQL**: Database management system for storing user information, book details, and purchase history.
+
+## Purpose
+
+This web project was developed as a part of the 5th semester DBMS mini project.
+
+
+---
+
 ##  Quick Links
 
 > - [ Repository Structure](#-repository-structure)
-> - [ Modules](#-modules)
 > - [ Getting Started](#-getting-started)
 >   - [ Installation](#-installation)
 >   - [ Running DBMS-Mini-Project](#-running-DBMS-Mini-Project)
@@ -33,8 +59,6 @@
 > - [ Contributing](#-contributing)
 > - [ License](#-license)
 > - [ Acknowledgments](#-acknowledgments)
-
----
 
 ---
 
@@ -60,32 +84,6 @@
 
 ---
 
-##  Modules
-
-
-<details closed><summary>public</summary>
-
-| File                                                                                                 | Summary                                         |
-| ---                                                                                                  | ---                                             |
-| [register.css](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/public/register.css) | HTTP error 401 for prompt `public/register.css` |
-| [login.css](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/public/login.css)       | HTTP error 401 for prompt `public/login.css`    |
-| [cart.css](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/public/cart.css)         | HTTP error 401 for prompt `public/cart.css`     |
-| [index.css](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/public/index.css)       | HTTP error 401 for prompt `public/index.css`    |
-
-</details>
-
-<details closed><summary>views</summary>
-
-| File                                                                                                | Summary                                        |
-| ---                                                                                                 | ---                                            |
-| [login.ejs](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/views/login.ejs)       | HTTP error 401 for prompt `views/login.ejs`    |
-| [cart.ejs](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/views/cart.ejs)         | HTTP error 401 for prompt `views/cart.ejs`     |
-| [index.ejs](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/views/index.ejs)       | HTTP error 401 for prompt `views/index.ejs`    |
-| [register.ejs](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/master/views/register.ejs) | HTTP error 401 for prompt `views/register.ejs` |
-
-</details>
-
----
 
 ##  Getting Started
 
@@ -93,7 +91,11 @@
 
 Ensure you have the following dependencies installed on your system:
 
-* **CSS**: `version x.y.z`
+
+* **Node.js**: `v14.x or higher`
+* **Express**: `^4.17.1`
+* **MySQL**: `^2.18.1`
+* **EJS**: `^3.1.6`
 
 ###  Installation
 
@@ -133,53 +135,13 @@ To execute tests, run:
 
 ---
 
-##  Contributing
+## Contact Information
 
-Contributions are welcome! Here are several ways you can contribute:
+If you have any questions, suggestions, or feedback, feel free to reach out:
 
-- **[Submit Pull Requests](https://github.com/bharathsindhe03/DBMS-Mini-Project/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-- **[Join the Discussions](https://github.com/bharathsindhe03/DBMS-Mini-Project/discussions)**: Share your insights, provide feedback, or ask questions.
-- **[Report Issues](https://github.com/bharathsindhe03/DBMS-Mini-Project/issues)**: Submit bugs found or log feature requests for Dbms-mini-project.
+- **Email:** [aravind.shyamkrishna@gmail.com] and [sindhebharath10@gmail.com]
 
-<details closed>
-    <summary>Contributing Guidelines</summary>
 
-1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
-   ```sh
-   git clone https://github.com/bharathsindhe03/DBMS-Mini-Project
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to GitHub**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-
-Once your PR is reviewed and approved, it will be merged into the main branch.
-
-</details>
-
----
-
-##  License
-
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-##  Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
-
-[**Return**](#-quick-links)
+Feel free to connect or send a message! We'd love to hear from you.
 
 ---
