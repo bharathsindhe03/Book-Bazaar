@@ -8,7 +8,7 @@ const port = 3000;
 // MySQL connection configuration
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'sindh',
+  user: 'root',
   password: 'root123',
   database: 'onlinebookstore',
 });
