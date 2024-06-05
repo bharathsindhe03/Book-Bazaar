@@ -1,0 +1,69 @@
+-- Create the database
+CREATE DATABASE onlinebookstore;
+
+-- Use the database
+USE onlinebookstore;
+
+-- Create the bookdetails table
+CREATE TABLE bookdetails (
+    isbn VARCHAR(13),
+    on_sale DATE,
+    title VARCHAR(255),
+    author VARCHAR(255),
+    price DECIMAL(10,2),
+    description LONGTEXT,
+    image LONGBLOB,
+    id INT AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+
+-- Create the cart table
+CREATE TABLE cart (
+    id INT AUTO_INCREMENT,
+    user_id INT,
+    book_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (book_id) REFERENCES bookdetails(id)
+);
+
+-- Create the purchases table
+CREATE TABLE purchases (
+    purchase_id INT AUTO_INCREMENT,
+    user_id INT,
+    book_id INT,
+    purchase_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (purchase_id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (book_id) REFERENCES bookdetails(id)
+);
+
+-- Create the users table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(45),
+    username VARCHAR(45),
+    email VARCHAR(45),
+    password VARCHAR(45),
+    phone_number CHAR(10),
+    address LONGTEXT,
+    PRIMARY KEY (id)
+);
+
+
+-- Insert data into the bookdetails table
+INSERT INTO bookdetails (isbn, on_sale, title, author, price, description, image, id) VALUES
+('9780765389220', '2023-08-15', 'Starter Villain', 'John Scalzi', 28.99, 'Charlie\'s life is going nowhere fast. A divorced substitute teacher living with his cat in a house his siblings want to sell, all he wants is to open a pub downtown, if only the bank will approve his loan.', NULL, 1),
+('9781250280381', '2023-09-01', 'Punished for Dreaming', 'Bettina L. Love', 29.00, '“I am an eighties baby who grew to hate school. I never fully understood why. Until now. Until Bettina Love unapologetically and painstakingly chronicled the last forty years of education ‘reform’ in this landmark book. I hated school because it warred on me. I hated school because I loved to dream.”', NULL, 2),
+('9781250284099', '2023-08-20', 'Payback in Death', 'J. D. Robb', 30.00, 'A retired colleague\'s suspicious death puts Lt. Eve Dallas on the case in Payback in Death, the electrifying new novel from #1 New York Times bestselling author J.D. Robb.', NULL, 3),
+('9781250284327', '2023-07-01', 'Identity', 'Nora Roberts', 14.99, 'Former Army brat Morgan Albright has finally planted roots in a friendly neighborhood near Baltimore. Her friend and roommate Nina helps her make the mortgage payments, as does Morgan\'s job as a bartender. But after she and Nina host their first dinner party—attended by Luke, the flirtatious IT guy who\'d been chatting her up at the bar—her carefully built world is shattered. The back door glass is broken, cash and jewelry are missing, her car is gone, and Nina lies dead on the floor.', NULL, 4),
+('9781250301697', '2019-12-01', 'The Silent Patient', 'Alex Michaelides', 28.99, 'An unforgettable—and Hollywood-bound—new thriller... A mix of Hitchcockian suspense, Agatha Christie plotting, and Greek tragedy.', NULL, 5),
+('9781250803825', '2022-09-15', 'A Flicker in the Dark', 'Stacy Willingham', 29.00, '“A smart, edge-of-your-seat story with plot twists you’ll never see coming. Stacy Willingham’s debut will keep you turning pages long past your bedtime.” —Karin Slaughter', NULL, 6),
+('9781250847041', '2023-05-01', 'The Plus One', 'Mazey Eddings', 16.99, '"Mazey Eddings’s writing is authentic, emotional, and intensely romantic! To me, it’s like a Taylor Swift song in book form." - New York Times bestselling author Ali Hazelwood', NULL, 7),
+('9781250851208', '2023-10-01', 'A Curse for True Love', 'Stephanie Garber', 20.99, 'Blood will be shed, hearts will be stolen, and true love will be put to the test in A CURSE FOR TRUE LOVE, the breathtaking conclusion to Stephanie Garber’s #1 NEW YORK TIMES bestselling Once Upon A Broken Heart trilogy', NULL, 8),
+('9781250852038', '2023-09-15', 'Activate Your Greatness', 'Alex Toussaint', 27.99, 'Alex Toussaint, the Peloton star who counts everyone from Roger Federer and the Golden State Warriors to the Today Show’s Carson Daly as fans, hops off the bike and gives readers the inspiration and motivation they need to activate their greatness in every aspect of their lives.', NULL, 9),
+('9781250859891', '2024-01-01', 'What Lies in the Woods', 'Kate Alice Marshall', 18.99, 'They were eleven when they sent a killer to prison. They were heroes . . . but they were liars.', NULL, 10),
+('9781250866448', '2022-10-15', 'Friends, Lovers, and the Big Terrible Thing', 'Matthew Perry', 29.99, 'The BELOVED STAR OF FRIENDS takes us behind the scenes of the hit sitcom and his struggles with addiction in this “CANDID, DARKLY FUNNY...POIGNANT” memoir (The New York Times)', NULL, 11),
+('9781250899699', '2023-08-01', 'Yumi and the Nightmare Painter', 'Brandon Sanderson', 29.99, 'Yumi has spent her entire life in strict obedience, granting her the power to summon the spirits that bestow vital aid upon her society—but she longs for even a single day as a normal person. Painter patrols the dark streets dreaming of being a hero—a goal that has led to nothing but heartache and isolation, leaving him always on the outside looking in.', NULL, 12);
+
