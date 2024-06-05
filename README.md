@@ -114,7 +114,7 @@ cd DBMS-Mini-Project
 3. Install the dependencies:
 
 ```sh
-> npm install express mysql ejs
+npm install express mysql2 ejs
 ```
 
 ###  Running DBMS-Mini-Project
@@ -122,7 +122,7 @@ cd DBMS-Mini-Project
 Use the following command to run DBMS-Mini-Project:
 
 ```sh
-> node app.js
+node app.js
 ```
 
 ###  Tests
@@ -130,7 +130,7 @@ Use the following command to run DBMS-Mini-Project:
 To execute tests, run:
 
 ```sh
-> node test.js
+node test.js
 ```
 
 ---
